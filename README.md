@@ -3,6 +3,7 @@ jamz is a multi use discord bot, it can do everything the commands say it can do
 
 //main steps:
 step #1, download discord.js by doing "npm install discord.js" in your terminal 
+    
 step #2, download fs by doing "npm install fs"  
 step #3, put bots TOKEN in a .env file  
 step #4, set up a database with mongoose.db or if you're compitent with node.js, edit the code for a different database of your chooseing.  
