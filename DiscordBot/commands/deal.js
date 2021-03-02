@@ -1,7 +1,8 @@
 module.exports = {
     name: 'deal',
+    permissions: ["SEND_MESSAGES"], 
     description: 'will deal cards',
-async execute(Discord, message, client) {
+async execute(client, message, args, cmd, Discord) {
     cards = ["Ace of Clubs", "2 of Clubs", "3 of Clubs", "4 of Clubs", "5 of Clubs", 
 "6 of Clubs", "7 of Clubs", "8 of Clubs", "9 of Clubs", "10 of Clubs", 
 "Jack of Clubs", "Queen of Clubs", "King of Clubs",
@@ -48,11 +49,4 @@ const newEmbed = new Discord.MessageEmbed()
 
 
 
-//still in progress but it will get a random set of cards everytime 
-
-//to do with this command #1: add a fake economic system so people will have things to gamble. 
-//to do with this command #2: get a rule set for poker, and a list of all the hands you can do so if someone is new to poker they can still play. 
-//to do with this command #3: make a system for people to actualy play together
-//to do with this command #4: after #3, make it so it will randomly get 2 other cards for every player playing (and make sure those cards arent the same as the table or other players) then make it take those cards and private DM it to a player
-
-//there is so much more i have to do with this command but 1-4 should keep you going for the time being. 
+//dont worry about this command, it's uselless

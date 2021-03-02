@@ -7,10 +7,10 @@ const google = new Scraper({
 })
 module.exports = {
     name: 'image', 
+    permissions: ["SEND_MESSAGES"], 
     desc: 'will get an image off the internet', 
-    async execute(Discord, message, client){
+    async execute(client, message, args, cmd, Discord){
 
-        if(message.member.roles.cache.has('789644981585444895')){
         
         const image_quary = args.join(' '); 
         if(!image_quary) return message.channel.send('please enter a valid image name :)'); 
@@ -20,10 +20,7 @@ module.exports = {
         message.channel.send('this is what i found off the internet!'); 
         
         message.channel.send(image_results[0].url); 
-    } else {
-        message.channel.send('you do not have permisions to use this command'); 
     } 
-}
-}
+    } 
 
 //this works fine and although it does take a good second for the bot to get the image, i dont think it needs any changes.

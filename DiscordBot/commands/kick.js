@@ -1,9 +1,8 @@
 module.exports = {
     name: 'kick', 
+    permissions: ["KICK_MEMBERS"], 
     desc: 'will kick someone from a server', 
-    execute(Discord, message, client){
-
-        if(message.member.roles.cache.has('789644981585444895')){
+    execute(client, message, args, cmd, Discord){
 
         const member = message.mentions.users.first(); 
         if(member){
@@ -14,9 +13,7 @@ module.exports = {
             message.channel.send('you cannot kick that member :(, maybe next time'); 
         }
 
-    } else {
-        message.channel.send('you do not have permisions to use this command'); 
-    }
+    } 
 }
-}
-//this works fine and i dont think it needs any changes
+
+//this works, use it exactly the same way you >ban but instead with >kick @user

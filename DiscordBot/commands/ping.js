@@ -1,7 +1,8 @@
 module.exports = {
     name: 'ping', 
+    permissions: ["SEND_MESSAGES"], 
     desc: 'this is a ping command.', 
-    execute(client, message, args, Discord){
+    execute(client, message, args, cmd, Discord){
         message.channel.send('pong!'); 
     }
 }

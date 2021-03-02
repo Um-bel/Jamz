@@ -10,14 +10,18 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.4.0",
+    "call-of-duty-api": "^1.3.2",
     "discord.js": "^12.5.1",
     "dot": "^1.1.3",
     "dotenv": "^8.2.0",
     "env": "0.0.2",
+    "ffmpeg": "0.0.4",
     "ffmpeg-static": "^4.2.7",
     "fs": "0.0.1-security",
     "images-scraper": "^6.0.0",
+    "minecraft-server-util": "^3.4.3",
     "mongoose": "^5.11.17",
+    "spotify-url-info": "^2.2.0",
     "weather-js": "^2.0.0",
     "yt-search": "^2.7.3",
     "ytdl-core": "^4.5.0"

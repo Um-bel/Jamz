@@ -1,7 +1,8 @@
 module.exports = {
     name: 'help', 
+    permissions: ["SEND_MESSAGES"], 
     desc: 'this will tell you the commands the bot has to offer', 
-    execute(Discord, message, client) {
+    execute(client, message, args, cmd, Discord) {
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#961a5d')
         .setTitle('Commands, ">" is the prefix')
@@ -9,19 +10,25 @@ module.exports = {
         .addFields(
             {name: 'ping', value: 'will show the bots ping'}, 
             {name: 'hi', value: 'just a formal greeting'}, 
-            {name: 'play', value: 'will play music'}, 
-            {name: 'leave', value: 'will leave a vc'}, 
+            {name: 'p-help', value: 'will give you commands on how to play music'}, 
             {name: 'slowmode', value: 'will enable slowmode'},
             {name: 'weather', value: 'will tell you the weather in your area' }, 
             {name: 'avatar', value: 'will get/zoom in on someones profile picture'}, 
             {name: 'clear', value: 'will mass-delete messages (wont delete if it was upto 14 days ago, thats just how discord works)'}, 
             {name: 'kick', value: 'will kick a player from the server'}, 
             {name: 'ban', value: 'will ban someone from the server'}, 
-            //{name: 'mute', value: 'will prevent someone form talking, without removing them from the server.'}, 
-            {name: 'reaction role', value: 'will assign teams (yay segrigation!!)'}, 
+            {name: 'mute', value: 'will prevent someone form talking, without removing them from the server.'}, 
+            {name: 'unmute', value: 'will unmute someone.'}, 
             {name: 'image', value: 'will get an image off the internet for you'}, 
-            
-
+            {name: 'suggest',  value: 'will allow you to suggest something to the server'}, 
+            {name: 'mcserver', value: 'will get info from a minecraft server'},
+            {name: 'cod-help', value: 'will give you COD commands (buggy)'}, 
+            {name: 'say', value: "say something!"}, 
+            {name: "bugreport", value: "report a bug that the bot has"}, 
+            {name: 'rps', value: 'will start a game of rock, paper, scissors'}, 
+            {name: 'beg', value: 'will beg for coins (VERY new and is still very buggy, use >bugreport to report any bugs)'}, 
+            {name: 'balence', value: 'will check how many coins you currently have **this command dosnt work ATM ill update it soon**'}, 
+    
         )
         message.channel.send(newEmbed); 
 
@@ -30,19 +37,4 @@ module.exports = {
     
 
 
-//this probably wont work if, it dosnt, log here:
-
-//fail 1: dosnt recognise ".newColor" as a command. i wonnder if it dosnt regonise .setTitle or .setDesc either. 
-
-//fail 2: it didnt recognise ".setColor" as a command however... 
-//fail 2 continued: it did regonise the rest of them as a command and worked proporly. i wonder if this is because i used an invalid hex color.
-
-//attemt 3: the hex color was not the problem, i tried a different one and got the same result, i dont know what im doing wrong...
-
-//attemt 4: i have found out the problem, i had typed ".newColor" instead of ".setColor", i will try ".setColor" with the original hex color and see if it works. 
-
-//attemt 5: it has operated 100% correctly with the exact hex color i wanted it to... amazing. 
-
-
-
-//appart from the fails this is working fine now, though just remember to add the commands you make here. otherwise they're going to go underappreciated. 
+//this works fine. 

@@ -4,10 +4,9 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'weather',
+    permissions: ["SEND_MESSAGES"], 
     aliases: ['wthr'],
-    async execute(message, args, client, Discord) {
-
-        if(message.member.roles.cache.has('791417114384007188')) return message.channel.send('you do not have permistions to use this command, kys cam!') ; 
+    async execute(client, message, args, cmd, Discord) {
     
         weather.find({search: args.join(" "), degreeType: 'F'}, function (error, result){
             
@@ -38,4 +37,4 @@ module.exports = {
 }
 
 
-//this took so long to code, there where so many errors. i had to rewrite it 20 times! and even then it wasnt perfect!!!
+//this took so long to code, there where so many errors. i had to rewrite it 20 times! and even then it wasnt perfect!!! this also is operatinal 

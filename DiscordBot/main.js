@@ -3,18 +3,18 @@ const mongoose = require('mongoose');
 require('dotenv').config(); 
 const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION" ]}); 
 
-// mongoose.connect(process.env.MONGODB_SRV, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}).then(()=>{
-//     console.log('connected to database')
-// }).catch((err) =>{
-//     console.log(err); 
-// }); 
-
 client.commands = new Discord.Collection(); 
 client.events = new Discord.Collection(); 
 
 ['commandHandler', 'eventHandler'].forEach(handler =>{
     require(`./handlers/${handler}`)(client, Discord); 
 })
+
+mongoose.connect(process.env.MONGODB_SRV, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}).then(()=>{
+    console.log('connected to database')
+}).catch((err) =>{
+    console.log(err); 
+}); 
 
 //integrate this sometime the commands bellow sometime 
 // client.on('guildMemberAdd', guildMember =>{
@@ -25,4 +25,4 @@ client.events = new Discord.Collection();
 // }); 
 
 
-client.login(process.env.TOKEN); 
+client.login(process.env.TOKEN);

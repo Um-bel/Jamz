@@ -1,25 +1,28 @@
 module.exports = {
     name: 'mute', 
+    permissions: ["KICK_MEMBERS"], 
     desc: 'will mute a player from talking, without removing them from the server', 
-    execute(message, args, client, Discord){
+    execute(client, message, args, cmd, Discord){
+
+        if(message.member.roles.cache.has('814618453007794178')){
         const target = message.mentions.users.first(); 
         if(target){
-            let mainRole = message.guild.roles.cache.find(role => role.name === 'Everyone Else'); 
-            let muteRole = message.guild.roles.cache.find(role => role.name === 'muted'); 
+            let mainRole = message.guild.roles.cache.find(role => role.name === 'Online'); 
+            let muteRole = message.guild.roles.cache.find(role => role.name === 'Muted'); 
 
             let memberTarget = message.guild.members.cache.get(target.id); 
 
             memberTarget.roles.remove(mainRole.id); 
-            memberTarget.roles.add('muteRole'); 
-            message.channel.send(`@${memberTarget.user.id} has been muted`);
+            memberTarget.roles.add(muteRole.id); 
+            message.channel.send(`${memberTarget.user} has been muted`);
         } else {
-            message.channel.send('apologies, i cant find someone under that name :/'); 
+            message.channel.send('apologies, i cant find someone under that name, or they are already muted.'); 
         }
+    } else {
+        message.channel.send('boppity boo, this command is to powerfull for you')
     }
 }
+}
 
-//not operatinal
-
-//change the "let mainRole = message.guild.roles.cache.find(role => role.name === 'Everyone Else');" to the Everyone Else role ID, and do the same for the "muted" role. 
-
-//i dont think that is even necacary because when i was in main.js i saw that instead of saying 'mute' i said ' mute' and i think that's what broke it. 
+//this works fine, but you need an "Online" role and a "Muted" role...
+//... i will hard code it to make an Online role and Muted role automatically if there isnt already one. but for now just make a Online and Muted role. 

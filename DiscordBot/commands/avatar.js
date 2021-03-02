@@ -1,9 +1,10 @@
 const Discord = require("discord.js");
 module.exports = {
     name: "avatar",
+    permissions: ["SEND_MESSAGES"], 
     aliases: ['icon', 'pfp', 'profilepic', 'av'],
     description: "Displays users avatar",
-     async execute (Discord, message, client) {
+     async execute (client, message, args, cmd, Discord) {
          const user = message.mentions.users.first() || message.author;
          message.channel.send(
             new Discord.MessageEmbed()
@@ -16,9 +17,6 @@ module.exports = {
              }
 }
 
-//operatinal 
-
-//this works fine now, i dont think i need to add anything. 
-//i added ait in an embed bc it looks better that way. 
+//this should work fine, if you have a gif as a pfp it might break, but it shouldn't. 
 
 

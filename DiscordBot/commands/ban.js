@@ -1,9 +1,9 @@
 module.exports = {
     name: 'ban', 
+    permissions: ["BAN_MEMBERS"], 
     desc: 'will ban someone from a server', 
-    execute(Discord, message, client){
+    execute(client, message, args, cmd, Discord){
 
-        if(message.member.roles.cache.has('789644981585444895')){
 
         const member = message.mentions.users.first(); 
         if(member){
@@ -14,10 +14,7 @@ module.exports = {
             message.channel.send('you cannot ban that member :(, maybe next time'); 
         }
 
-    } else {
-        message.channel.send('you do not have permisions to use this command'); 
-    }
-}
+    } 
 }
 
-//idk if this is operatinal or not because i havent had the guts to bad someone. :(
+//this should work, how to use >ban @user. you need the ban perm to use
