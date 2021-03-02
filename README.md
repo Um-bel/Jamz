@@ -9,7 +9,7 @@ step #4, set up a database with mongoose.db or if you're compitent with node.js,
 
 //some commands will need these to work:  
 step #1, for call of duty commands "npm install call-of-duty-api" and put your call of duty login, inside a .env file         
-step #2, for the image command "npm install images-scraper" 
+step #2, for the image command "npm install images-scraper"         
 step #3, for the minecraft command "npm install minecraft-server-util"  
 step #4, for the play command "npm install ytdl-core" and "npm install yt-search" 
 step #5, for the weather command "npm install weather-js"
