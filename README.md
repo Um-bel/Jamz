@@ -1,7 +1,7 @@
 # Jamz
 jamz is a multi use discord bot, it can do everything the commands say it can do, appart from the bugs of course. 
 
-//main steps:                   
+## main steps:                   
 step #1, download discord.js by doing "npm install discord.js" in your terminal       
 step #2, download fs by doing "npm install fs"  
 step #3, put bots TOKEN in a .env file  
